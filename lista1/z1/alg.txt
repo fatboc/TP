@@ -1,0 +1,12 @@
+0. Wygeneruj pustą planszę
+1. Pobierz od gracza kółko współrzędne ruchu
+2. Sprawdź czy podane współrzędne są poprawne.
+    Jeśli NIE, to wróć do pkt 1.
+    Jeśli TAK, to przejdź do punktu 3.
+3. Sprawdź czy gra została ukończona(czy istnieje linia z 3 kółkami lub wszystkie pola są zajęte).
+    Jeśli NIE, to przejdź do pkt 4.
+    Jeśli TAK, to zakończ grę.
+4. Wyświetl obecny stan planszy.
+5. Powtórz pkt 1-5 dla gracza krzyzyk.
+
+x-2, x-1, x, x+1, x+2 = {x, x+1, x+2} mod 3
