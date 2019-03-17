@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1552836857 source:/home/fatusia/Documents/TP/lista1/z3/main.cpp
+	<iostream>
+	<list>
+	<vector>
+
