@@ -1,4 +1,10 @@
 # depslib dependency file v1.0
-1553536139 source:/home/fatusia/Documents/TP/lista33/z5/main.cpp
-	<deque>
+1553976082 source:/home/fatusia/Documents/TP/lista33/z5/main.cpp
+	"VectorInt.h"
+
+1553976043 source:/home/fatusia/Documents/TP/lista33/z5/VectorInt.cpp
+	"VectorInt.h"
+
+1553975584 /home/fatusia/Documents/TP/lista33/z5/VectorInt.h
+	<iostream>
 
