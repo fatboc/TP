@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1553976979 source:/home/fatusia/Documents/TP/lista4/z1/z1.cpp
+
+1554030862 source:/home/fatusia/Documents/TP/lista4/z1/main.cpp
+	<iostream>
+	<map>
+

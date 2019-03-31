@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1554070048 source:/home/fatusia/Documents/TP/lista5/l5.cpp
+	"l5.h"
+
+1554068136 /home/fatusia/Documents/TP/lista5/l5.h
+	<iostream>
+	<vector>
+	<map>
+	<gsl/gsl_const_mksa.h>
+	<gsl/gsl_odeiv2.h>
+	<gsl/gsl_errno.h>
+
+1554069775 source:/home/fatusia/Documents/TP/lista5/main.cpp
+	"l5.h"
+
+1500818591 /home/fatusia/Documents/TP/lista5/gsl_const_mksa.h
+
+1554048634 /home/fatusia/Documents/TP/lista5/gsl_integration.h
+	<stdlib.h>
+	"gsl_math.h"
+
+1500818591 /home/fatusia/Documents/TP/lista5/gsl_math.h
+	<math.h>
+	<gsl/gsl_sys.h>
+	<gsl/gsl_inline.h>
+	<gsl/gsl_machine.h>
+	<gsl/gsl_precision.h>
+	<gsl/gsl_nan.h>
+	<gsl/gsl_pow_int.h>
+	<gsl/gsl_minmax.h>
+
