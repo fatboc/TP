@@ -15,12 +15,17 @@ int main()
     else{
 
     }*/
-    param p(1, 10, 0.1);
+//    param p(1, 10, 0.1);
+//
+//    p.setv(0,0,0);
+//    p.setr(0,0,100);
+//    p.setw(7, 3, -2);
+//    p.setk(0.30);
+//    p.setm(0.70);
 
-    p.setv(0,0,0);
-    p.setr(0,0,100);
-    p.setk(0.30);
-    p.setm(0.70);
+    param p;
+
+    p.set_init_val();;
 
     p.setpoints();
 

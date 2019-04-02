@@ -32,7 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="alg.txt" />
 		<Unit filename="main.cpp" />
+		<Unit filename="z1.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="z2.cpp" />
 		<Unit filename="z2.h" />
 		<Extensions>
 			<code_completion />

@@ -53,13 +53,18 @@ void TicTacToe::graj(){
 bool TicTacToe::ruch(){
     int x=0;
     int y=0;
+    string c_x, c_y;
 
     do{
         cout << "Podaj x-wspolrzedna ruchu gracza " << gracz << endl;
-        cin >> x;
+        cin >> c_x;
         cout << "Podaj y-wspolrzedna ruchu gracza " << gracz << endl;
-        cin >> y;
-    }while (!poprawny(x, y));
+        cin >> c_y;
+        //cin.ignore(1000, '\n');
+    }while (!poprawny(c_x.c_str(), c_y.c_str()));
+
+    x=atoi(c_x.c_str());
+    y=atoi(c_y.c_str());
 
     plansza[x][y]=gracz;
 
@@ -118,15 +123,64 @@ bool TicTacToe::koniec(){
     return true;
 }
 
-bool TicTacToe::poprawny(int x, int y){
+bool TicTacToe::poprawny(const char * c_x, const char * c_y){
 
-     if (x>N-1 || y>N-1 || x<0 || y<0){
-        cout << "Podane pole nie istnieje" << endl;
+    string s1 = "Niepoprawne dane.";
+    string s2 = "Pole zajete.";
+    string s3 = "Niespodziewany symbol.";
+
+    try{
+        if (!(*c_x>='0' && *c_x<='9') || !(*c_y>='0' && *c_y<='9')) throw s3;
+        int x = atoi(c_x);
+        int y = atoi(c_y);
+        if (x>N-1 || y>N-1 || x<0 || y<0) throw s1;
+        if(plansza[x][y]!=puste) throw s2;
+    }
+
+    catch(string s){
+        cout << s << endl;
         return false;
     }
 
-    if(plansza[x][y]!=puste){
-        cout << "Podane pole jest zajęte" << endl;
+    return true;
+}
+
+bool TicTacToe::zapisz(){
+    ofstream out;
+
+    string s = "Blad pliku.";
+
+    try{
+        out.open("gra.txt");
+
+        if(!out) throw s;
+
+        for(int i=0; i<N; i++){
+            for(int j=0; j<N; j++){
+            //cout << setw(3);
+                switch(plansza[i][j]){
+                case puste:
+                    out << "   ";
+                    break;
+                case kolko:
+                    out << " O ";
+                    break;
+                case krzyzyk:
+                    out << " X ";
+                    break;
+                }
+            }
+        out << endl;
+        }
+
+        out.close();
+    }
+    catch(string s){
+        cout << s << endl;
+        return false;
+    }
+    catch(...){
+        cout << "Blad zapisu." << endl;
         return false;
     }
 

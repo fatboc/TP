@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1554198238 source:/home/fatusia/Documents/TP/lista4/z3/main.cpp
+	"TicTacToe.h"
+
+1554197745 /home/fatusia/Documents/TP/lista4/z3/TicTacToe.h
+	<iostream>
+	<stdlib.h>
+	<fstream>
+

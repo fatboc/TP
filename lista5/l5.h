@@ -12,6 +12,14 @@ const vector<double> g = {0, 0, -1*GSL_CONST_MKSA_GRAV_ACCEL};
 
 class motion;
 
+class coeffs{
+    public:
+    double g;
+    double k;
+    double mass;
+    double w;
+};
+
 class param{
     double t_min;
     double t_max;
@@ -22,6 +30,7 @@ class param{
 
     vector<double> v_0 = {0, 0, 0};
     vector<double> r_0 = {0, 0, 0};
+    vector<double> w = {0, 0, 0};
 
     vector<motion> points;
 
@@ -33,10 +42,11 @@ class param{
     void setv(vector<double> v);
     void setr(double x, double y, double z);
     void setr(vector<double> r);
+    void setw(double x, double y, double z);
     void setk(double _k);
     void setm(double _m);
     void fprint();
-    void get_init_val();
+    void set_init_val();
 };
 
 
@@ -51,9 +61,4 @@ class motion{
     friend void param::setpoints();
 };
 
-class coeffs{
-    public:
-    double g;
-    double k;
-    double mass;
-};
+

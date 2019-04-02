@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1554110163 source:/home/fatusia/Documents/TP/lista5/l5.cpp
+1554181991 source:/home/fatusia/Documents/TP/lista5/l5.cpp
 	"l5.h"
 
-1554110461 /home/fatusia/Documents/TP/lista5/l5.h
+1554181664 /home/fatusia/Documents/TP/lista5/l5.h
 	<iostream>
 	<vector>
 	<map>
@@ -11,7 +11,7 @@
 	<gsl/gsl_errno.h>
 	<fstream>
 
-1554110454 source:/home/fatusia/Documents/TP/lista5/main.cpp
+1554181664 source:/home/fatusia/Documents/TP/lista5/main.cpp
 	"l5.h"
 
 1500818591 /home/fatusia/Documents/TP/lista5/gsl_const_mksa.h

@@ -1,4 +1,6 @@
 #include<iostream>
+#include <stdlib.h>
+#include <fstream>
 #define N 3
 
 enum Stan{
@@ -18,6 +20,7 @@ class TicTacToe{
     bool ruch();
     bool szukaj(int x, int y);
     bool koniec();
-    bool poprawny(int x, int y);
+    bool poprawny(const char * c_x, const char * c_y);
+    bool zapisz();
 };
 

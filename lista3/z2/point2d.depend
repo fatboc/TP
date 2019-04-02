@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1554112150 source:/home/fatusia/Documents/TP/lista3/z2/main.cpp
+	<iostream>
+	"point2d.hpp"
+
+1554152785 /home/fatusia/Documents/TP/lista3/z2/point2d.hpp
+	<iostream>
+
+1554152852 source:/home/fatusia/Documents/TP/lista3/z2/point2d.cpp
+	"point2d.hpp"
+	<iostream>
+	<cmath>
+

@@ -1,7 +1,10 @@
 # depslib dependency file v1.0
-1554029419 source:/home/fatusia/Documents/TP/lista4/z2/main.cpp
+1554201315 source:/home/fatusia/Documents/TP/lista4/z2/main.cpp
 	"z2.h"
 
-1554029639 /home/fatusia/Documents/TP/lista4/z2/z2.h
+1554201830 /home/fatusia/Documents/TP/lista4/z2/z2.h
 	<iostream>
+
+1554161159 source:/home/fatusia/Documents/TP/lista4/z2/z2.cpp
+	"z2.h"
 
