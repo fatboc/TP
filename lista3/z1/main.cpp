@@ -1,35 +1,28 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-bool match(const string & pattern, const string& s){
-    int its=0, itp=0;
-    for (itp; itp<pattern.length(); ++itp){
-        if(pattern[itp]=='*'){
-            ++itp;
-            while((++its)!=s.length() || s[its]!=pattern[itp]);
-        }
+bool match(const string & pattern, const string & s){
 
-        if(pattern[itp]=='?'){
-            if (pattern[++itp]==s[its])
-                continue;
-            else if(pattern[itp]==s[++its]){
-                ++itp;
-                continue;
-            }
-        }
+    if( s.size()==1 )
+    if (( pattern.size() == 1 && pattern.front()==s.front() ) || ( pattern.front()=='*' || pattern.front()=='?') )
+        return true;
+        else return false;
 
-        if(pattern[itp]!=s[its])
-            return false;
+	else if(pattern.front()=='?'){
+		return match(pattern.substr(1), s.substr(1));
+	}
 
-        its++;
-    }
+	else if(pattern.front()=='*'){
+		if(pattern.front()!=s.front() || !match(pattern.substr(1), s.substr(1)))
+			return match(pattern, s.substr(1));
+	}
 
-    return true;
+    return match(pattern.substr(1), s.substr(1));
+
 }
 
-int main()
-{
-    cout << match("el?wa", "eluwa") << endl;
-    return 0;
+int main(){
+	cout << match("i??yi*?*", "inzyieria kwantowa") << endl;
 }
