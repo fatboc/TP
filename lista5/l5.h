@@ -5,6 +5,7 @@
 #include <gsl/gsl_odeiv2.h>
 #include <gsl/gsl_errno.h>
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
@@ -14,10 +15,10 @@ class motion;
 
 class coeffs{
     public:
-    double g;
     double k;
     double mass;
-    double w;
+    vector<double> w = {0, 0, 0};
+
 };
 
 class param{

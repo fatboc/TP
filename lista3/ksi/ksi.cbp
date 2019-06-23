@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="z4" />
+		<Option title="ksi" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/z4" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/ksi" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/z4" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/ksi" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,9 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="TicTacToe.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="minimax.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

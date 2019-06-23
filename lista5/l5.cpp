@@ -36,28 +36,29 @@ int func(double t, const double y[], double f[], void * params){
     (void)(t);
     coeffs c = *(coeffs*)params;
 
-    f[0] = y[1];
-    f[1] = c.g + (c.k/c.mass)*(y[1]-c.w);
+    f[0] = (-1*c.k)/c.mass * sqrt((y[0]-c.w[0])*(y[0]-c.w[0]) + (y[1]-c.w[1])*(y[1]-c.w[1]) + (y[2]-c.w[2])*(y[2]-c.w[2])) * (y[0]-c.w[0])+g[0];
+    f[1] = (-1*c.k)/c.mass * sqrt((y[0]-c.w[0])*(y[0]-c.w[0]) + (y[1]-c.w[1])*(y[1]-c.w[1]) + (y[2]-c.w[2])*(y[2]-c.w[2])) * (y[1]-c.w[1]) +g[1];
+    f[2] = (-1*c.k)/c.mass* sqrt((y[0]-c.w[0])*(y[0]-c.w[0]) + (y[1]-c.w[1])*(y[1]-c.w[1]) + (y[2]-c.w[2])*(y[2]-c.w[2])) * (y[2]-c.w[2]) +g[2];
+    f[3] = y[0];
+    f[4] = y[1];
+    f[5] = y[2];
 
     return GSL_SUCCESS;
 }
 
 void param::setpoints(){
-        int k=0;
 
-        coeffs c;
+    coeffs cf;
+    cf.k = k0;
+    cf.mass = mass;
+    cf.w = w;
 
-    for(int i=0; i<3; i++){
-        k=0;
-        c.g = g[i];
-        c.k = k0;
-        c.mass = mass;
-        c.w = w[i];
+    int k=0;
 
-        gsl_odeiv2_system sys = {func, NULL, 2, &c};
-        gsl_odeiv2_driver *d = gsl_odeiv2_driver_alloc_y_new (&sys, gsl_odeiv2_step_rkf45, 1e-4, 1e-4, 0.0);
+    gsl_odeiv2_system sys = {func, NULL, 6, &cf};
+    gsl_odeiv2_driver *d = gsl_odeiv2_driver_alloc_y_new (&sys, gsl_odeiv2_step_rkf45, 1e-4, 1e-4, 0.0);
 
-        double y[2] = {r_0[i], v_0[i]};
+        double y[6] = {v_0[0], v_0[1], v_0[2], r_0[0], r_0[1], r_0[2]};
         double t=t_min;
 
         for (double j=t_min; j<t_max; j+=t_step){
@@ -69,23 +70,21 @@ void param::setpoints(){
                 break;
             }
 
-            if(i==0){
                 motion m;
                 m.time = j;
                 points.push_back(m);
-            }
 
-            points[k].r[i]=y[0];
-            points[k].v[i]=y[1];
+            points[k].r={y[3], y[4], y[5]};
+            points[k].v={y[0], y[1], y[2]};
 
             k++;
         }
         gsl_odeiv2_driver_free (d);
-    }
+
 
     for (int j=0; j<k; j++){
         points[j].print();
-    }
+        }
 }
 
 void param::fprint(){

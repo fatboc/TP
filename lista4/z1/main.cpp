@@ -114,6 +114,7 @@ void przegladaj(map<string, string> & adresy)
 
             case '2':
                 adresy.erase(it);
+
                 cout << "Usunieto" << endl;
                                 return;
 

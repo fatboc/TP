@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1558465147 source:/home/fatusia/Documents/TP/lista3/ksi/main.cpp
+	<iostream>
+	"ksi.hpp"
+	<string>
+	<map>
+	<fstream>
+
+1558465152 /home/fatusia/Documents/TP/lista3/ksi/ksi.hpp
+	<iostream>
+	<string>
+	<map>
+	<fstream>
+
+1558465160 source:/home/fatusia/Documents/TP/lista3/ksi/ksi.cpp
+	"ksi.hpp"
+

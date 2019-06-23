@@ -17,11 +17,11 @@ int main()
     }*/
 //    param p(1, 10, 0.1);
 //
-//    p.setv(0,0,0);
+//    p.setv(50,0,50);
 //    p.setr(0,0,100);
-//    p.setw(7, 3, -2);
-//    p.setk(0.30);
-//    p.setm(0.70);
+//    p.setw(1,5,0);
+//    p.setk(0.05);
+//    p.setm(1.0);
 
     param p;
 
